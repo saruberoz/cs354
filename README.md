@@ -1,1 +1,1 @@
-List of CS354(Operating Sytems)-Fall2012 Labs and Projects
+List of CS354(Operating Sytems) Labs and Projects
