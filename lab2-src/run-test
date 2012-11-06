@@ -1,0 +1,306 @@
+#!/bin/sh
+
+make clean
+make test1 test2 test3 MyMalloc.so
+total=0
+
+#-------------- test1-first ----------------------
+echo "--- Running test1 MALLOCPOLICY=FIRSTFIT (10pts) ---"
+MALLOCPOLICY=FIRSTFIT && export MALLOCPOLICY
+LD_LIBRARY_PATH=$$LD_LIBRARY_PATH:`pwd`
+export LD_LIBRARY_PATH
+rm -f  out
+test1 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 10000 < heapsize < 20000; heapsize was $heapsize" 
+if [ $passed -eq 0 -a "$heapsize" -a $heapsize -gt 10000 -a $heapsize -lt 20000 ];
+then
+  echo ">>> test1-first passed";
+  total=`expr $total + 10`;
+  test1first=passed
+else
+  echo "*** test1-first failed";
+  test1first=failed
+fi
+
+#-------------- test2-first ----------------------
+echo "--- Running test2 MALLOCPOLICY=FIRSTFIT (10pts) ---"
+MALLOCPOLICY=FIRSTFIT && export MALLOCPOLICY
+LD_LIBRARY_PATH=$$LD_LIBRARY_PATH:`pwd`
+export LD_LIBRARY_PATH
+rm -f  out
+test2 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 10000 < heapsize < 200000; heapsize was $heapsize" 
+if [ $passed -eq 0 -a "$heapsize" -a $heapsize -gt 10000 -a $heapsize -lt 200000 ];
+then
+  echo ">>> test2-first passed";
+  total=`expr $total + 10`;
+  test2first=passed
+else
+  echo "*** test2-first failed";
+  test2first=failed
+fi
+
+#-------------- test3-first ----------------------
+echo "--- Running test3 MALLOCPOLICY=FIRSTFIT (10pts) ---"
+MALLOCPOLICY=FIRSTFIT && export MALLOCPOLICY
+LD_LIBRARY_PATH=$$LD_LIBRARY_PATH:`pwd`
+export LD_LIBRARY_PATH
+rm -f  out
+test3 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 10000 < heapsize < 20000; heapsize was $heapsize" 
+if [ $passed -eq 0 -a "$heapsize" -a $heapsize -gt 10000 -a $heapsize -lt 20000 ];
+then
+  echo ">>> test3-first passed";
+  total=`expr $total + 10`;
+  test3first=passed
+else
+  echo "*** test3-first failed";
+  test3first=failed
+fi
+
+#-------------- test4-first ----------------------
+echo "--- Running test4 MALLOCPOLICY=FIRSTFIT (10pts) ---"
+MALLOCPOLICY=FIRSTFIT && export MALLOCPOLICY
+(
+LD_PRELOAD=`pwd`/MyMalloc.so
+export LD_PRELOAD
+rm -f  out
+/opt/SUNWspro/bin/cc hello.c > out1 2>&1
+echo $? > passed
+)
+passed=`cat passed`
+heapsize=`grep HeapSize out1 | awk '{if (i == 0) print $2; i =1}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 100000 < heapsize < 250000; heapsize was $heapsize" 
+if [ $passed -eq 0 -a "$heapsize" -a $heapsize -gt 100000 -a $heapsize -lt 250000 ];
+then
+  echo ">>> test4-first passed";
+  total=`expr $total + 10`;
+  test4first=passed
+else
+  echo "*** test4-first failed";
+  test4first=failed
+fi
+
+#-------------- test1-bestfit ----------------------
+echo "--- Running test1 MALLOCPOLICY=BESTFIT (10pts) ---"
+MALLOCPOLICY=BESTFIT && export MALLOCPOLICY
+LD_LIBRARY_PATH=$$LD_LIBRARY_PATH:`pwd`
+export LD_LIBRARY_PATH
+rm -f  out
+test1 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 10000 < heapsize < 20000; heapsize was $heapsize" 
+if [ $passed -eq 0 -a "$heapsize" -a $heapsize -gt 10000 -a $heapsize -lt 20000 ];
+then
+  echo ">>> test1-bestfit passed";
+  total=`expr $total + 10`;
+  test1bestfit=passed
+else
+  echo "*** test1-bestfit failed";
+  test1bestfit=failed
+fi
+
+#-------------- test2-bestfit ----------------------
+echo "--- Running test2 MALLOCPOLICY=BESTFIT (10pts) ---"
+MALLOCPOLICY=BESTFIT && export MALLOCPOLICY
+LD_LIBRARY_PATH=$$LD_LIBRARY_PATH:`pwd`
+export LD_LIBRARY_PATH
+rm -f  out
+test2 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 10000 < heapsize < 200000; heapsize was $heapsize" 
+if [ $passed -eq 0 -a "$heapsize" -a $heapsize -gt 10000 -a $heapsize -lt 200000 ];
+then
+  echo ">>> test2-bestfit passed";
+  total=`expr $total + 10`;
+  test2bestfit=passed
+else
+  echo "*** test2-bestfit failed";
+  test2bestfit=failed
+fi
+
+#-------------- test3-bestfit ----------------------
+echo "--- Running test3 MALLOCPOLICY=BESTFIT (10pts) ---"
+MALLOCPOLICY=BESTFIT && export MALLOCPOLICY
+LD_LIBRARY_PATH=$$LD_LIBRARY_PATH:`pwd`
+export LD_LIBRARY_PATH
+rm -f  out
+test3 > out 2>&1
+passed=$?
+heapsize=`grep HeapSize out | awk '{print $2}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 10000 < heapsize < 200000; heapsize was $heapsize" 
+if [ $passed -eq 0 -a "$heapsize" -a $heapsize -gt 10000 -a $heapsize -lt 20000 ];
+then
+  echo ">>> test3-bestfit passed";
+  total=`expr $total + 10`;
+  test3bestfit=passed
+else
+  echo "*** test3-bestfit failed";
+  test3bestfit=failed
+fi
+
+#-------------- test4-bestfit ----------------------
+echo "--- Running test4 MALLOCPOLICY=BESTFIT (10pts) ---"
+MALLOCPOLICY=BESTFIT && export MALLOCPOLICY
+(
+LD_PRELOAD=`pwd`/MyMalloc.so
+export LD_PRELOAD
+rm -f  out2
+/opt/SUNWspro/bin/cc hello.c > out2 2>&1
+echo $? > passed
+)
+passed=`cat passed`
+heapsize=`grep HeapSize out2 | awk '{if (i == 0) print $2; i =1}'`
+if [ "$heapsize" = "" ]; then heapsize=0; fi;
+echo "expected: 10000 < heapsize < 200000; heapsize was $heapsize" 
+if [ $passed -eq 0 -a "$heapsize" -a $heapsize -gt 100000 -a $heapsize -lt 250000 ];
+then
+  echo ">>> test4-bestfit passed";
+  total=`expr $total + 10`;
+  test4bestfit=passed
+else
+  echo "*** test4-bestfit failed";
+  test4bestfit=failed
+fi
+
+#-------------- test5-bestfit vs. first fit----------------------
+echo "--- Running test5 bestfit vs. firstfit MALLOCPOLICY=FIRSTFIT (20pts) ---"
+/opt/SUNWspro/bin/CC -o test5 test5.cc MyMalloc.so
+MALLOCPOLICY=FIRSTFIT && export MALLOCPOLICY
+LD_LIBRARY_PATH=$$LD_LIBRARY_PATH:`pwd`
+export LD_LIBRARY_PATH
+rm -f  outff
+test5 > outff 2>&1
+passedff=$?
+heapsizeff=`grep HeapSize outff | awk '{print $2}'`
+MALLOCPOLICY=BESTFIT && export MALLOCPOLICY
+rm -f  outbf
+test5 > outbf 2>&1
+passedbf=$?
+heapsizebf=`grep HeapSize outbf | awk '{print $2}'`
+echo  heapsizeff=$heapsizeff heapsizebf=$heapsizebf
+if [ "$heapsizeff" = "" ]; then heapsizeff=0; fi;
+if [ "$heapsizebf" = "" ]; then heapsizebf=0; fi;
+
+echo "expected: 250000 < heapsizeff < 350000; heapsizeff was $heapsizeff" 
+echo "expected: 140000 < heapsizebf < 210000; heapsizebf was $heapsizebf"
+if [ $passedff -eq 0 -a $heapsizeff -gt 250000 -a $heapsizeff -lt 350000 ];
+then
+  if [ $passedbf -eq 0 -a $heapsizebf -gt 140000 -a $heapsizebf -lt 210000 ];
+  then
+    echo ">>> test5 passed";
+    total=`expr $total + 10`; 
+    test5=passed
+  else
+    echo "*** test5 failed";
+    test5=failed
+  fi
+else
+  echo "*** test5 failed";
+  test5=failed
+fi
+
+total=0
+echo ------- SUMMARY ---------
+if [ $test1first = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 1. test1first $current out of 10
+
+
+if [ $test2first = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+
+echo 2. test2first $current out of 10
+
+if [ $test3first = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 3. test3first $current out of 10
+
+if [ $test4first = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 4. test4first $current out of 10
+
+if [ $test1bestfit = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 5. test1bestfit $current out of 10
+
+if [ $test2bestfit = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 6. test2bestfit $current out of 10
+
+if [ $test3bestfit = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 7. test3bestfit $current out of 10
+
+if [ $test4bestfit = "passed" ];
+then
+  current=10
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 8. test4bestfit $current out of 10
+
+
+if [ $test5 = "passed" ];
+then
+  current=20
+else
+  current=0
+fi
+total=`expr $total + $current`
+echo 9. test5 $current out of 10
+
+
+echo -------------------------
+echo Total = $total

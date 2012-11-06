@@ -1,0 +1,1 @@
+ld.so.1: cc: fatal: relocation error: file /.data-2/home/u95/wsumanan/cs354-f12/lab2-src/MyMalloc.so: symbol __gxx_personality_v0: referenced symbol not found

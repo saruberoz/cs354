@@ -1,0 +1,437 @@
+
+ELF Header
+  ei_magic:   { 0x7f, E, L, F }
+  ei_class:   ELFCLASS32          ei_data:       ELFDATA2MSB
+  ei_osabi:   ELFOSABI_SOLARIS    ei_abiversion: EAV_SUNW_CURRENT
+  e_machine:  EM_SPARC32PLUS      e_version:     EV_CURRENT
+  e_type:     ET_EXEC
+  e_flags:    [ EF_SPARC_32PLUS ]
+  e_entry:               0x10884  e_ehsize:     52  e_shstrndx:  36
+  e_shoff:                0x6ddc  e_shentsize:  40  e_shnum:     37
+  e_phoff:                  0x34  e_phentsize:  32  e_phnum:     6
+
+Program Header[0]:
+    p_vaddr:      0x10034     p_flags:    [ PF_X PF_R ]
+    p_paddr:      0           p_type:     [ PT_PHDR ]
+    p_filesz:     0xc0        p_memsz:    0xc0
+    p_offset:     0x34        p_align:    0
+
+Program Header[1]:
+    p_vaddr:      0x100f4     p_flags:    [ PF_R ]
+    p_paddr:      0           p_type:     [ PT_INTERP ]
+    p_filesz:     0x11        p_memsz:    0x11
+    p_offset:     0xf4        p_align:    0
+
+Program Header[2]:
+    p_vaddr:      0x10000     p_flags:    [ PF_X PF_R ]
+    p_paddr:      0           p_type:     [ PT_LOAD ]
+    p_filesz:     0x46d0      p_memsz:    0x46d0
+    p_offset:     0           p_align:    0x10000
+
+Program Header[3]:
+    p_vaddr:      0x246d0     p_flags:    [ PF_X PF_W PF_R ]
+    p_paddr:      0           p_type:     [ PT_LOAD ]
+    p_filesz:     0x23c       p_memsz:    0x3f4
+    p_offset:     0x46d0      p_align:    0x10000
+
+Program Header[4]:
+    p_vaddr:      0x247d4     p_flags:    [ PF_X PF_W PF_R ]
+    p_paddr:      0           p_type:     [ PT_DYNAMIC ]
+    p_filesz:     0x110       p_memsz:    0
+    p_offset:     0x47d4      p_align:    0
+
+Program Header[5]:
+    p_vaddr:      0x10108     p_flags:    [ PF_R ]
+    p_paddr:      0           p_type:     [ PT_SUNW_UNWIND ]
+    p_filesz:     0xc         p_memsz:    0xc
+    p_offset:     0x108       p_align:    0x4
+
+Section Header[1]:  sh_name: .interp
+    sh_addr:      0x100f4         sh_flags:   [ SHF_ALLOC ]
+    sh_size:      0x11            sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0xf4            sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1       
+
+Section Header[2]:  sh_name: .eh_frame_hdr
+    sh_addr:      0x10108         sh_flags:   [ SHF_ALLOC ]
+    sh_size:      0xc             sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x108           sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[3]:  sh_name: .hash
+    sh_addr:      0x10114         sh_flags:   [ SHF_ALLOC ]
+    sh_size:      0x104           sh_type:    [ SHT_HASH ]
+    sh_offset:    0x114           sh_entsize: 0x4 (65 entries)
+    sh_link:      4               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[4]:  sh_name: .dynsym
+    sh_addr:      0x10218         sh_flags:   [ SHF_ALLOC ]
+    sh_size:      0x200           sh_type:    [ SHT_DYNSYM ]
+    sh_offset:    0x218           sh_entsize: 0x10 (32 entries)
+    sh_link:      5               sh_info:    1
+    sh_addralign: 0x4       
+
+Section Header[5]:  sh_name: .dynstr
+    sh_addr:      0x10418         sh_flags:   [ SHF_ALLOC SHF_STRINGS ]
+    sh_size:      0x328           sh_type:    [ SHT_STRTAB ]
+    sh_offset:    0x418           sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1       
+
+Section Header[6]:  sh_name: .SUNW_version
+    sh_addr:      0x10740         sh_flags:   [ SHF_ALLOC ]
+    sh_size:      0x20            sh_type:    [ SHT_SUNW_verneed ]
+    sh_offset:    0x740           sh_entsize: 0x1 (32 entries)
+    sh_link:      5               sh_info:    1
+    sh_addralign: 0x4       
+
+Section Header[7]:  sh_name: .SUNW_versym
+    sh_addr:      0x10760         sh_flags:   [ SHF_ALLOC ]
+    sh_size:      0x40            sh_type:    [ SHT_SUNW_versym ]
+    sh_offset:    0x760           sh_entsize: 0x2 (32 entries)
+    sh_link:      4               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[8]:  sh_name: .SUNW_reloc
+    sh_addr:      0x107a0         sh_flags:   [ SHF_ALLOC ]
+    sh_size:      0x3c            sh_type:    [ SHT_RELA ]
+    sh_offset:    0x7a0           sh_entsize: 0xc (5 entries)
+    sh_link:      4               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[9]:  sh_name: .rela.plt
+    sh_addr:      0x107dc         sh_flags:   [ SHF_ALLOC SHF_INFO_LINK ]
+    sh_size:      0xa8            sh_type:    [ SHT_RELA ]
+    sh_offset:    0x7dc           sh_entsize: 0xc (14 entries)
+    sh_link:      4               sh_info:    15
+    sh_addralign: 0x4       
+
+Section Header[10]:  sh_name: .text
+    sh_addr:      0x10884         sh_flags:   [ SHF_ALLOC SHF_EXECINSTR ]
+    sh_size:      0x2fe8          sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x884           sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[11]:  sh_name: .init
+    sh_addr:      0x1386c         sh_flags:   [ SHF_ALLOC SHF_EXECINSTR ]
+    sh_size:      0x1c            sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x386c          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[12]:  sh_name: .fini
+    sh_addr:      0x13888         sh_flags:   [ SHF_ALLOC SHF_EXECINSTR ]
+    sh_size:      0x14            sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x3888          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[13]:  sh_name: .rodata
+    sh_addr:      0x138a0         sh_flags:   [ SHF_ALLOC ]
+    sh_size:      0xe30           sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x38a0          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x8       
+
+Section Header[14]:  sh_name: .got
+    sh_addr:      0x246d0         sh_flags:   [ SHF_WRITE SHF_ALLOC ]
+    sh_size:      0x28            sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x46d0          sh_entsize: 0x4 (10 entries)
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[15]:  sh_name: .plt
+    sh_addr:      0x246f8         sh_flags:   [ SHF_WRITE SHF_ALLOC SHF_EXECINSTR ]
+    sh_size:      0xdc            sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x46f8          sh_entsize: 0xc (18 entries)
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[16]:  sh_name: .dynamic
+    sh_addr:      0x247d4         sh_flags:   [ SHF_WRITE SHF_ALLOC ]
+    sh_size:      0x110           sh_type:    [ SHT_DYNAMIC ]
+    sh_offset:    0x47d4          sh_entsize: 0x8 (34 entries)
+    sh_link:      5               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[17]:  sh_name: .eh_frame
+    sh_addr:      0x248e4         sh_flags:   [ SHF_WRITE SHF_ALLOC ]
+    sh_size:      0x4             sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x48e4          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[18]:  sh_name: .data
+    sh_addr:      0x248e8         sh_flags:   [ SHF_WRITE SHF_ALLOC ]
+    sh_size:      0xc             sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x48e8          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[19]:  sh_name: .ctors
+    sh_addr:      0x248f4         sh_flags:   [ SHF_WRITE SHF_ALLOC ]
+    sh_size:      0x8             sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x48f4          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[20]:  sh_name: .dtors
+    sh_addr:      0x248fc         sh_flags:   [ SHF_WRITE SHF_ALLOC ]
+    sh_size:      0x8             sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x48fc          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[21]:  sh_name: .jcr
+    sh_addr:      0x24904         sh_flags:   [ SHF_WRITE SHF_ALLOC ]
+    sh_size:      0x4             sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x4904          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[22]:  sh_name: .data.rel.local
+    sh_addr:      0x24908         sh_flags:   [ SHF_WRITE SHF_ALLOC ]
+    sh_size:      0x4             sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x4908          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[23]:  sh_name: .bss
+    sh_addr:      0x24940         sh_flags:   [ SHF_WRITE SHF_ALLOC ]
+    sh_size:      0x184           sh_type:    [ SHT_NOBITS ]
+    sh_offset:    0x4940          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x40      
+
+Section Header[24]:  sh_name: .symtab
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0x640           sh_type:    [ SHT_SYMTAB ]
+    sh_offset:    0x490c          sh_entsize: 0x10 (100 entries)
+    sh_link:      25              sh_info:    69
+    sh_addralign: 0x4       
+
+Section Header[25]:  sh_name: .strtab
+    sh_addr:      0               sh_flags:   [ SHF_STRINGS ]
+    sh_size:      0x267           sh_type:    [ SHT_STRTAB ]
+    sh_offset:    0x4f4c          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1       
+
+Section Header[26]:  sh_name: .debug_line
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0xd50           sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x51b3          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1       
+
+Section Header[27]:  sh_name: .debug_info
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0x71d           sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x5f03          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1       
+
+Section Header[28]:  sh_name: .debug_abbrev
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0x178           sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x6620          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1       
+
+Section Header[29]:  sh_name: .debug_aranges
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0x90            sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x6798          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x8       
+
+Section Header[30]:  sh_name: .debug_ranges
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0x40            sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x6828          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x8       
+
+Section Header[31]:  sh_name: .comment
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0x90            sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x6868          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1       
+
+Section Header[32]:  sh_name: .debug_frame
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0x2c            sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x68f8          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x4       
+
+Section Header[33]:  sh_name: .debug_loc
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0x1e            sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x6924          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1       
+
+Section Header[34]:  sh_name: .debug_pubnames
+    sh_addr:      0               sh_flags:   0
+    sh_size:      0x1b            sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x6942          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1       
+
+Section Header[35]:  sh_name: .debug_str
+    sh_addr:      0               sh_flags:   [ SHF_MERGE SHF_STRINGS ]
+    sh_size:      0x325           sh_type:    [ SHT_PROGBITS ]
+    sh_offset:    0x695d          sh_entsize: 0x1 (805 entries)
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1       
+
+Section Header[36]:  sh_name: .shstrtab
+    sh_addr:      0               sh_flags:   [ SHF_STRINGS ]
+    sh_size:      0x157           sh_type:    [ SHT_STRTAB ]
+    sh_offset:    0x6c82          sh_entsize: 0
+    sh_link:      0               sh_info:    0
+    sh_addralign: 0x1       
+
+Symbol Table Section:  .dynsym
+     index    value      size      type bind oth ver shndx          name
+       [0]  0x00000000 0x00000000  NOTY LOCL  D    0 UNDEF          
+       [1]  0x0001386c 0x0000001c  FUNC GLOB  D    1 .init          _init
+       [2]  0x000246f8 0x00000000  OBJT GLOB  D    1 .plt           _PROCEDURE_LINKAGE_TABLE_
+       [3]  0x000138a0 0x00000004  OBJT GLOB  D    1 .rodata        _lib_version
+       [4]  0x00024794 0x00000000  FUNC GLOB  D    2 UNDEF          printf
+       [5]  0x00024740 0x00000000  FUNC GLOB  D    2 UNDEF          _exit
+       [6]  0x000247b8 0x00000000  FUNC GLOB  D    2 UNDEF          malloc
+       [7]  0x000247ac 0x00000000  FUNC GLOB  D    2 UNDEF          fseek
+       [8]  0x000248ec 0x00000000  OBJT GLOB  D    1 .data          __dso_handle
+       [9]  0x00010884 0x00000074  FUNC GLOB  D    1 .text          _start
+      [10]  0x00000000 0x00000000  NOTY WEAK  D    0 UNDEF          __deregister_frame_info
+      [11]  0x000247d4 0x00000000  OBJT GLOB  D    1 .dynamic       _DYNAMIC
+      [12]  0x00024764 0x00000000  FUNC GLOB  D    2 UNDEF          fprintf
+      [13]  0x00024788 0x00000000  FUNC GLOB  D    2 UNDEF          puts
+      [14]  0x000247a0 0x00000000  FUNC GLOB  D    2 UNDEF          putchar
+      [15]  0x000146d0 0x00000000  OBJT GLOB  D    1 .rodata        _etext
+      [16]  0x00024ac4 0x00000000  OBJT GLOB  D    1 .bss           _end
+      [17]  0x000247c4 0x00000000  FUNC GLOB  D    2 UNDEF          strcmp
+      [18]  0x00024770 0x00000000  FUNC GLOB  D    2 UNDEF          fopen
+      [19]  0x00024ac0 0x00000004  OBJT GLOB  D    1 .bss           _environ
+      [20]  0x000246d0 0x00000000  OBJT GLOB  P    1 .got           _GLOBAL_OFFSET_TABLE_
+      [21]  0x00024ac0 0x00000004  OBJT WEAK  D    1 .bss           environ
+      [22]  0x0002490c 0x00000000  OBJT GLOB  D    1 .data.rel.loca _edata
+      [23]  0x00024728 0x00000000  FUNC GLOB  D    2 UNDEF          atexit
+      [24]  0x00013888 0x00000014  FUNC GLOB  D    1 .fini          _fini
+      [25]  0x0002477c 0x00000000  FUNC GLOB  D    2 UNDEF          fread
+      [26]  0x00000000 0x00000000  NOTY WEAK  D    0 UNDEF          _Jv_RegisterClasses
+      [27]  0x00000000 0x00000000  NOTY WEAK  D    0 UNDEF          __register_frame_info
+      [28]  0x00024980 0x00000140  OBJT WEAK  D    1 .bss           _iob
+      [29]  0x00010b20 0x00002cec  FUNC GLOB  D    1 .text          main
+      [30]  0x00024734 0x00000000  FUNC GLOB  D    2 UNDEF          exit
+      [31]  0x00024980 0x00000140  OBJT GLOB  D    1 .bss           __iob
+
+Symbol Table Section:  .symtab
+     index    value      size      type bind oth ver shndx          name
+       [0]  0x00000000 0x00000000  NOTY LOCL  D    0 UNDEF          
+       [1]  0x00000000 0x00000000  FILE LOCL  D    0 ABS            elfinfo
+       [2]  0x000100f4 0x00000000  SECT LOCL  D    0 .interp        
+       [3]  0x00010108 0x00000000  SECT LOCL  D    0 .eh_frame_hdr  
+       [4]  0x00010114 0x00000000  SECT LOCL  D    0 .hash          
+       [5]  0x00010218 0x00000000  SECT LOCL  D    0 .dynsym        
+       [6]  0x00010418 0x00000000  SECT LOCL  D    0 .dynstr        
+       [7]  0x00010740 0x00000000  SECT LOCL  D    0 .SUNW_version  
+       [8]  0x00010760 0x00000000  SECT LOCL  D    0 .SUNW_versym   
+       [9]  0x000107a0 0x00000000  SECT LOCL  D    0 .SUNW_reloc    
+      [10]  0x000107dc 0x00000000  SECT LOCL  D    0 .rela.plt      
+      [11]  0x00010884 0x00000000  SECT LOCL  D    0 .text          
+      [12]  0x0001386c 0x00000000  SECT LOCL  D    0 .init          
+      [13]  0x00013888 0x00000000  SECT LOCL  D    0 .fini          
+      [14]  0x000138a0 0x00000000  SECT LOCL  D    0 .rodata        
+      [15]  0x000246d0 0x00000000  SECT LOCL  D    0 .got           
+      [16]  0x000246f8 0x00000000  SECT LOCL  D    0 .plt           
+      [17]  0x000247d4 0x00000000  SECT LOCL  D    0 .dynamic       
+      [18]  0x000248e4 0x00000000  SECT LOCL  D    0 .eh_frame      
+      [19]  0x000248e8 0x00000000  SECT LOCL  D    0 .data          
+      [20]  0x000248f4 0x00000000  SECT LOCL  D    0 .ctors         
+      [21]  0x000248fc 0x00000000  SECT LOCL  D    0 .dtors         
+      [22]  0x00024904 0x00000000  SECT LOCL  D    0 .jcr           
+      [23]  0x00024908 0x00000000  SECT LOCL  D    0 .data.rel.loca 
+      [24]  0x00024940 0x00000000  SECT LOCL  D    0 .bss           
+      [25]  0x00000000 0x00000000  SECT LOCL  D    0 .symtab        
+      [26]  0x00000000 0x00000000  SECT LOCL  D    0 .strtab        
+      [27]  0x00000000 0x00000000  SECT LOCL  D    0 .debug_line    
+      [28]  0x00000000 0x00000000  SECT LOCL  D    0 .debug_info    
+      [29]  0x00000000 0x00000000  SECT LOCL  D    0 .debug_abbrev  
+      [30]  0x00000000 0x00000000  SECT LOCL  D    0 .debug_aranges 
+      [31]  0x00000000 0x00000000  SECT LOCL  D    0 .debug_ranges  
+      [32]  0x00000000 0x00000000  SECT LOCL  D    0 .comment       
+      [33]  0x00000000 0x00000000  SECT LOCL  D    0 .debug_frame   
+      [34]  0x00000000 0x00000000  SECT LOCL  D    0 .debug_loc     
+      [35]  0x00000000 0x00000000  SECT LOCL  D    0 .debug_pubname 
+      [36]  0x00000000 0x00000000  SECT LOCL  D    0 .debug_str     
+      [37]  0x00000000 0x00000000  SECT LOCL  D    0 .shstrtab      
+      [38]  0x00024ac4 0x00000000  OBJT LOCL  D    0 .bss           _END_
+      [39]  0x00010000 0x00000000  OBJT LOCL  D    0 .interp        _START_
+      [40]  0x000108a8 0x00000000  NOTY LOCL  D    0 .text          .nope
+      [41]  0x00000000 0x00000000  FILE LOCL  D    0 ABS            crti.s
+      [42]  0x00000000 0x00000000  FILE LOCL  D    0 ABS            values-Xa.c
+      [43]  0x00024940 0x00000000  NOTY LOCL  D    0 .bss           Bbss.bss
+      [44]  0x000248e8 0x00000000  NOTY LOCL  D    0 .data          Ddata.data
+      [45]  0x000138a0 0x00000000  NOTY LOCL  D    0 .rodata        Drodata.rodata
+      [46]  0x00000000 0x00000000  FILE LOCL  D    0 ABS            crtstuff.c
+      [47]  0x000248e8 0x00000000  OBJT LOCL  D    0 .data          force_to_data
+      [48]  0x000248f4 0x00000000  OBJT LOCL  D    0 .ctors         __CTOR_LIST__
+      [49]  0x000248fc 0x00000000  OBJT LOCL  D    0 .dtors         __DTOR_LIST__
+      [50]  0x000248e4 0x00000000  OBJT LOCL  D    0 .eh_frame      __EH_FRAME_BEGIN__
+      [51]  0x00024904 0x00000000  OBJT LOCL  D    0 .jcr           __JCR_LIST__
+      [52]  0x00010900 0x00000000  FUNC LOCL  D    0 .text          __do_global_dtors_aux
+      [53]  0x00024940 0x00000001  OBJT LOCL  D    0 .bss           completed.3669
+      [54]  0x00024908 0x00000000  OBJT LOCL  D    0 .data.rel.loca p.3670
+      [55]  0x0001099c 0x00000000  FUNC LOCL  D    0 .text          call___do_global_dtors_aux
+      [56]  0x000109a8 0x00000000  FUNC LOCL  D    0 .text          frame_dummy
+      [57]  0x00024944 0x00000018  OBJT LOCL  D    0 .bss           object.3686
+      [58]  0x00010a28 0x00000000  FUNC LOCL  D    0 .text          call_frame_dummy
+      [59]  0x00000000 0x00000000  FILE LOCL  D    0 ABS            elfinfo.c
+      [60]  0x00000000 0x00000000  FILE LOCL  D    0 ABS            crtstuff.c
+      [61]  0x000248f0 0x00000000  OBJT LOCL  D    0 .data          force_to_data
+      [62]  0x000248f8 0x00000000  OBJT LOCL  D    0 .ctors         __CTOR_END__
+      [63]  0x00024900 0x00000000  OBJT LOCL  D    0 .dtors         __DTOR_END__
+      [64]  0x000248e4 0x00000000  OBJT LOCL  D    0 .eh_frame      __FRAME_END__
+      [65]  0x00024904 0x00000000  OBJT LOCL  D    0 .jcr           __JCR_END__
+      [66]  0x00013814 0x00000000  FUNC LOCL  D    0 .text          __do_global_ctors_aux
+      [67]  0x00013860 0x00000000  FUNC LOCL  D    0 .text          call___do_global_ctors_aux
+      [68]  0x00000000 0x00000000  FILE LOCL  D    0 ABS            crtn.s
+      [69]  0x0001386c 0x0000001c  FUNC GLOB  D    0 .init          _init
+      [70]  0x000246f8 0x00000000  OBJT GLOB  D    0 .plt           _PROCEDURE_LINKAGE_TABLE_
+      [71]  0x000138a0 0x00000004  OBJT GLOB  D    0 .rodata        _lib_version
+      [72]  0x00024794 0x00000000  FUNC GLOB  D    0 UNDEF          printf
+      [73]  0x00024740 0x00000000  FUNC GLOB  D    0 UNDEF          _exit
+      [74]  0x000247b8 0x00000000  FUNC GLOB  D    0 UNDEF          malloc
+      [75]  0x000247ac 0x00000000  FUNC GLOB  D    0 UNDEF          fseek
+      [76]  0x000248ec 0x00000000  OBJT GLOB  D    0 .data          __dso_handle
+      [77]  0x00010884 0x00000074  FUNC GLOB  D    0 .text          _start
+      [78]  0x00000000 0x00000000  NOTY WEAK  D    0 UNDEF          __deregister_frame_info
+      [79]  0x000247d4 0x00000000  OBJT GLOB  D    0 .dynamic       _DYNAMIC
+      [80]  0x00024764 0x00000000  FUNC GLOB  D    0 UNDEF          fprintf
+      [81]  0x00024788 0x00000000  FUNC GLOB  D    0 UNDEF          puts
+      [82]  0x000247a0 0x00000000  FUNC GLOB  D    0 UNDEF          putchar
+      [83]  0x000146d0 0x00000000  OBJT GLOB  D    0 .rodata        _etext
+      [84]  0x00024ac4 0x00000000  OBJT GLOB  D    0 .bss           _end
+      [85]  0x000247c4 0x00000000  FUNC GLOB  D    0 UNDEF          strcmp
+      [86]  0x00024770 0x00000000  FUNC GLOB  D    0 UNDEF          fopen
+      [87]  0x00024ac0 0x00000004  OBJT GLOB  D    0 .bss           _environ
+      [88]  0x000246d0 0x00000000  OBJT GLOB  P    0 .got           _GLOBAL_OFFSET_TABLE_
+      [89]  0x00024ac0 0x00000004  OBJT WEAK  D    0 .bss           environ
+      [90]  0x0002490c 0x00000000  OBJT GLOB  D    0 .data.rel.loca _edata
+      [91]  0x00024728 0x00000000  FUNC GLOB  D    0 UNDEF          atexit
+      [92]  0x00013888 0x00000014  FUNC GLOB  D    0 .fini          _fini
+      [93]  0x0002477c 0x00000000  FUNC GLOB  D    0 UNDEF          fread
+      [94]  0x00000000 0x00000000  NOTY WEAK  D    0 UNDEF          _Jv_RegisterClasses
+      [95]  0x00000000 0x00000000  NOTY WEAK  D    0 UNDEF          __register_frame_info
+      [96]  0x00024980 0x00000140  OBJT WEAK  D    0 .bss           _iob
+      [97]  0x00010b20 0x00002cec  FUNC GLOB  D    0 .text          main
+      [98]  0x00024734 0x00000000  FUNC GLOB  D    0 UNDEF          exit
+      [99]  0x00024980 0x00000140  OBJT GLOB  D    0 .bss           __iob
